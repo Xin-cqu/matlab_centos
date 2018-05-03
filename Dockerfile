@@ -15,6 +15,7 @@ ENV XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Runtime/v90/X11/app-defaults
 ENV MCR_CACHE_VERBOSE=true
 ENV MCR_CACHE_ROOT=/tmp
 
+RUN mkdir /script
 RUN yum install -y git
 RUN cd /script && git clone https://github.com/youlong1230/DockerTEST.git
 ADD wb_pipeline_EEG_REST /root/matlab_script/wb_pipeline_EEG_REST
