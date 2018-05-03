@@ -3,6 +3,7 @@ MAINTAINER Xin Wen <nclxwen@gmail.com>
 RUN mkdir /mcr-install
 WORKDIR /mcr-install
 RUN yum install -y wget
+RUN yum install -y unzip
 RUN wget -nv http://www.mathworks.com/supportfiles/downloads/R2015b/deployment_files/R2015b/installers/glnxa64/MCR_R2015b_glnxa64_installer.zip
 RUN unzip MCR_R2015b_glnxa64_installer.zip
 
