@@ -2,7 +2,7 @@ FROM centos
 MAINTAINER Xin Wen <nclxwen@gmail.com>
 RUN mkdir /mcr-install
 WORKDIR /mcr-install
-RUN yum install wget
+RUN yum install -y wget
 RUN wget -nv http://www.mathworks.com/supportfiles/downloads/R2015b/deployment_files/R2015b/installers/glnxa64/MCR_R2015b_glnxa64_installer.zip
 RUN unzip MCR_R2015b_glnxa64_installer.zip
 
@@ -14,7 +14,7 @@ ENV XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Runtime/v90/X11/app-defaults
 ENV MCR_CACHE_VERBOSE=true
 ENV MCR_CACHE_ROOT=/tmp
 
-RUN yum install git
+RUN yum install -y git
 RUN cd /script && git clone https://github.com/youlong1230/DockerTEST.git
 ADD wb_pipeline_EEG_REST /root/matlab_script/wb_pipeline_EEG_REST
 ADD wb_pipeline_EEG_calcPower /root/matlab_script/wb_pipeline_EEG_calcPower
